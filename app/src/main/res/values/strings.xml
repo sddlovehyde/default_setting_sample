@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">default_setting_sample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Scan_Always_Avaliable">Scan Always Avaliable</string>
+</resources>
