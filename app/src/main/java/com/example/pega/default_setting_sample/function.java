@@ -125,6 +125,14 @@ public class function {
     }
 
 
+    public  static void moveToocation(Context context)
+    {
+
+        context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+
+    }
+
+
 
 
 }
