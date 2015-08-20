@@ -11,17 +11,19 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
+
     public void showResultUI(boolean result, TextView mTextView)
     {
 
 
         if( result == true)
         {
-            mTextView.setBackgroundColor(Color.GREEN);
+            mTextView.setBackgroundColor(getResources().getColor(R.color.green));
+            mTextView.setTextSize(25);
         }
         else
-            mTextView.setBackgroundColor(Color.RED);
-
+            mTextView.setBackgroundColor(getResources().getColor(R.color.red));
+            mTextView.setTextSize(25);
 
 
     }
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         showResultUI(function.checkVerifyApps(this),textView7);
 
         function.moveToBackup(this);
-
+        function.moveToocation(this);
 
 
 
