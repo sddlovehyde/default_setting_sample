@@ -1,6 +1,5 @@
 package com.example.pega.default_setting_sample;
 
-import android.app.backup.BackupManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.net.wifi.WifiManager;
@@ -112,7 +111,10 @@ public class function {
     public static boolean checkVerifyApps(Context context) {
 
         boolean result = Settings.Secure.getInt(context.getContentResolver(), "package_verifier_enable", 1) == 1;
-        
+
+        boolean abc = Settings.Global.putInt(context.getContentResolver(), "backup_enable", 1);
+        System.out.println("12345555"+abc);
+
         return result;
 
 
@@ -120,12 +122,8 @@ public class function {
 
     public  static boolean checkBackup(Context context)
     {
-        boolean backup = Settings.System.getInt(context.getContentResolver(), "backup", 1) == 1;
+        boolean backup = Settings.Global.getInt(context.getContentResolver(), "backup_enable", 1) == 1;
         return backup;
-        
-        
-        BackupManager mBackup = (BackupManager) context.getSystemService(Context.backup);
-                
 
     }
 

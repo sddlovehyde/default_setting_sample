@@ -1,9 +1,7 @@
 package com.example.pega.default_setting_sample;
 
 
-import android.content.Context;
 import android.graphics.Color;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
