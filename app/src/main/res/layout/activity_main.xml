@@ -74,31 +74,28 @@
         android:background="@drawable/text_view_border"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_alignBottom="@+id/backup"
-        android:layout_toStartOf="@+id/button2"
-        android:layout_marginEnd="38dp" />
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Setting"
+        android:id="@+id/button_setting"
+        android:layout_alignTop="@+id/button_pass"
+        android:layout_toStartOf="@+id/button_pass" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:layout_alignBottom="@+id/backup"
-        android:layout_alignEnd="@+id/backup"
-        android:layout_marginEnd="44dp" />
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="pass"
+        android:id="@+id/button_pass"
+        android:layout_alignTop="@+id/button_fail"
+        android:layout_toStartOf="@+id/button_fail" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:text="New Button"
-        android:id="@+id/button3"
-        android:layout_marginEnd="32dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="fail"
+        android:id="@+id/button_fail"
         android:layout_alignBottom="@+id/backup"
-        android:layout_toStartOf="@+id/button" />
+        android:layout_alignEnd="@+id/backup" />
 
 
 </RelativeLayout>

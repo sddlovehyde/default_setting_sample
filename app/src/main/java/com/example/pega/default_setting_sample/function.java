@@ -119,6 +119,7 @@ public class function {
 
     public  static void moveToBackup(Context context)
     {
+
         context.startActivity(new Intent(Settings.ACTION_PRIVACY_SETTINGS));
 
     }
