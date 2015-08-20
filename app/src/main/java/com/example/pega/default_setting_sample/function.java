@@ -125,7 +125,7 @@ public class function {
     }
 
 
-    public  static void moveToocation(Context context)
+    public  static void moveToLcation(Context context)
     {
 
         context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));

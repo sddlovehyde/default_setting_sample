@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">default_setting_sample</string>
+    <string name="app_name">Default Settings</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -11,4 +11,5 @@
     <string name="Legal">Google Legal</string>
     <string name="verify_app">Verifiy app</string>
     <string name="backup">Backup My Data</string>
+    <string name="Location">Location</string>
 </resources>
