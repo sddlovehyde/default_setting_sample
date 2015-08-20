@@ -3,7 +3,8 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    >
 
     <TextView android:text="@string/Scan_Always_Avaliable"
         android:id="@+id/Wifi_scan_always_text1"
@@ -12,5 +13,47 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
+    <TextView android:text="@string/Auto_Sync"
+        android:id="@+id/auto_Sync"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/Wifi_scan_always_text1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+    <TextView android:text="@string/unknown_source"
+        android:id="@+id/unknown_source"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/auto_Sync"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <TextView android:text="@string/development_option"
+        android:id="@+id/development_option"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/unknown_source"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/unknown_source" />
+    <TextView android:text="@string/USB_debugging"
+        android:id="@+id/USB_debugging"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/development_option"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/development_option" />
+    <TextView android:text="@string/Legal"
+        android:id="@+id/Legal"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/USB_debugging"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/USB_debugging" />
+    <TextView android:text="@string/verify_app"
+        android:id="@+id/verify_app"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/Legal"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/Legal" />
 
 </RelativeLayout>

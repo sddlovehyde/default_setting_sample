@@ -4,4 +4,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="Scan_Always_Avaliable">Scan Always Avaliable</string>
+    <string name="Auto_Sync">Auto Sync</string>
+    <string name="unknown_source">Unknown source</string>
+    <string name="development_option">Development option</string>
+    <string name="USB_debugging">USB Debugging</string>
+    <string name="Legal">Google Legal</string>
+    <string name="verify_app">Verifiy app</string>
 </resources>

@@ -1,8 +1,9 @@
 package com.example.pega.default_setting_sample;
 
+
 import android.content.Context;
 import android.graphics.Color;
-import android.net.wifi.WifiManager;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,31 +13,52 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    private WifiManager mWifiManager;
+    public void showResultUI(boolean result, TextView mTextView)
+    {
+
+
+        if( result == true)
+        {
+
+            mTextView.setBackgroundColor(Color.GREEN);
+        }
+        else
+            mTextView.setBackgroundColor(Color.RED);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mWifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-        TextView textView1 = (TextView)findViewById(R.id.Wifi_scan_always_text1);
+        TextView textView1 = (TextView) findViewById(R.id.Wifi_scan_always_text1);
+        TextView textView2 = (TextView) findViewById(R.id.auto_Sync);
+        TextView textView3 = (TextView) findViewById(R.id.unknown_source);
+        TextView textView4 = (TextView) findViewById(R.id.development_option);
+        TextView textView5 = (TextView) findViewById(R.id.USB_debugging);
+        TextView textView6 = (TextView) findViewById(R.id.Legal);
+        TextView textView7 = (TextView) findViewById(R.id.verify_app);
+
+
+
+        showResultUI(function.checkWifiAlwaysScanAvailable(this),textView1);
+        showResultUI(function.checkAutoSync(),textView2);
+        showResultUI(function.checkUnknownSource(this),textView3);
+        showResultUI(function.checkDevelopmentOption(this),textView4);
+        showResultUI(function.checkUSBDebugging(this),textView5);
+        showResultUI(function.checkLegal(),textView6);
+        showResultUI(function.checkVerifyApps(this),textView7);
+
+        function.checkBackup(this);
 
 
 
 
 
-        if (mWifiManager.isScanAlwaysAvailable()) {
-            System.out.print(" Scan always available is always on");
-            textView1.setBackgroundColor(Color.GREEN);
-
-
-        }
-        else if (!mWifiManager.isScanAlwaysAvailable()) {
-            textView1.setBackgroundColor(Color.RED);
-
-        }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
