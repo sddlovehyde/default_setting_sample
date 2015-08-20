@@ -17,11 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
         if( result == true)
         {
-
             mTextView.setBackgroundColor(Color.GREEN);
         }
         else
             mTextView.setBackgroundColor(Color.RED);
+
+
 
     }
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView textView1 = (TextView) findViewById(R.id.Wifi_scan_always_text1);
+
         TextView textView2 = (TextView) findViewById(R.id.auto_Sync);
         TextView textView3 = (TextView) findViewById(R.id.unknown_source);
         TextView textView4 = (TextView) findViewById(R.id.development_option);
@@ -48,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         showResultUI(function.checkLegal(),textView6);
         showResultUI(function.checkVerifyApps(this),textView7);
 
-        function.checkBackup(this);
+        function.moveToBackup(this);
+
 
 
 

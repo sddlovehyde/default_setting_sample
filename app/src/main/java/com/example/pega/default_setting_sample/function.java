@@ -2,12 +2,12 @@ package com.example.pega.default_setting_sample;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.provider.Settings;
-
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
 
 
 /**
@@ -112,18 +112,14 @@ public class function {
 
         boolean result = Settings.Secure.getInt(context.getContentResolver(), "package_verifier_enable", 1) == 1;
 
-        boolean abc = Settings.Global.putInt(context.getContentResolver(), "backup_enable", 1);
-        System.out.println("12345555"+abc);
-
         return result;
 
 
     }
 
-    public  static boolean checkBackup(Context context)
+    public  static void moveToBackup(Context context)
     {
-        boolean backup = Settings.Global.getInt(context.getContentResolver(), "backup_enable", 1) == 1;
-        return backup;
+        context.startActivity(new Intent(Settings.ACTION_PRIVACY_SETTINGS));
 
     }
 
