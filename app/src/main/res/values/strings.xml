@@ -2,7 +2,7 @@
     <string name="app_name">Default Settings</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="Save_log">Save Log</string>
     <string name="Scan_Always_Avaliable">Scan Always Avaliable</string>
     <string name="Auto_Sync">Auto Sync</string>
     <string name="unknown_source">Unknown source</string>

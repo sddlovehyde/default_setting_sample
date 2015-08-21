@@ -5,6 +5,9 @@ import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.provider.Settings;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 
@@ -17,12 +20,14 @@ public class function {
 
 
 
+
     public static boolean checkWifiAlwaysScanAvailable(Context context)
     {
 
         WifiManager mWifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 
         if (mWifiManager.isScanAlwaysAvailable()) {
+
 
             return true;
 
@@ -114,6 +119,20 @@ public class function {
         return result;
 
 
+    }
+
+    public static void writeLog(String name){
+
+        try {
+
+            FileWriter fw = new FileWriter("/sdcard/output.txt",false);
+            BufferedWriter log = new BufferedWriter(fw);
+            log.write(name);
+            log.newLine();
+            log.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

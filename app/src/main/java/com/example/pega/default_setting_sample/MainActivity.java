@@ -13,9 +13,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    String log="";
 
 
-    public void showResultUI(boolean result, TextView mTextView)
+    public void showResultUI(boolean result, TextView mTextView, int number)
     {
 
 
@@ -24,12 +25,102 @@ public class MainActivity extends AppCompatActivity {
             mTextView.setBackgroundColor(getResources().getColor(R.color.green));
             mTextView.setTextSize(20);
 
+            if(number == 1)
+            {
+                log = log + ("Wifi Always Available     PASS\n");
+            }
+
+            else if(number == 2)
+            {
+                log = log + ("Auto Sync                 PASS\n");
+            }
+
+            else if(number == 3)
+            {
+                log = log + ("Unknown source            PASS\n");
+            }
+
+            else if(number == 4)
+            {
+                log = log + ("Development option        PASS\n");
+            }
+
+            else if(number == 5)
+            {
+                log = log + ("USB debugging             PASS\n");
+            }
+
+            else if(number == 6)
+            {
+                log = log + ("Google Legal              PASS\n");
+            }
+
+            else if(number == 7)
+            {
+                log = log + ("Verify Apps               PASS\n");
+            }
+
+            else if(number == 8)
+            {
+                log = log + ("Backup my data            PASS\n");
+            }
+
+            else if(number == 9)
+            {
+                log = log + ("Location                  PASS\n");
+            }
+
+
         }
-        else
+        else if(result == false) {
             mTextView.setBackgroundColor(getResources().getColor(R.color.red));
             mTextView.setTextSize(20);
 
+            if (number == 1) {
+                log = log + ("Wifi Always Available     FAIL\n");
+            }
 
+            else if(number == 2)
+            {
+                log = log + ("Auto Sync                 FAIL\n");
+            }
+
+            else if(number == 3)
+            {
+                log = log + ("Unknown source            FAIL\n");
+            }
+
+            else if(number == 4)
+            {
+                log = log + ("Development option        FAIL\n");
+            }
+
+            else if(number == 5)
+            {
+                log = log + ("USB debugging             FAIL\n");
+            }
+
+            else if(number == 6)
+            {
+                log = log + ("Google Legal              FAIL\n");
+            }
+
+            else if(number == 7)
+            {
+                log = log + ("Verify Apps               FAIL\n");
+            }
+
+            else if(number == 8)
+            {
+                log = log + ("Backup my data            FAIL\n");
+            }
+
+            else if(number == 9)
+            {
+                log = log + ("Location                  FAIL\n");
+            }
+
+        }
     }
 
     @Override
@@ -59,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
         Button button_location_pass = (Button) findViewById(R.id.button_location_pass);
         Button button_location_fail = (Button) findViewById(R.id.button_location_fail);
 
-
         button_setting_backup.setOnClickListener(new Button.OnClickListener(){
 
             @Override
@@ -76,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                showResultUI(true, textView8);
+                showResultUI(true, textView8, 8);
 
             }
 
@@ -87,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                showResultUI(false, textView8);
+                showResultUI(false, textView8, 8);
 
             }
 
@@ -110,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                showResultUI(true, textView9);
+                showResultUI(true, textView9, 9);
 
             }
 
@@ -121,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                showResultUI(false, textView9);
+                showResultUI(false, textView9, 9);
 
             }
 
@@ -129,13 +219,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        showResultUI(function.checkWifiAlwaysScanAvailable(this), textView1);
-        showResultUI(function.checkAutoSync(),textView2);
-        showResultUI(function.checkUnknownSource(this),textView3);
-        showResultUI(function.checkDevelopmentOption(this),textView4);
-        showResultUI(function.checkUSBDebugging(this), textView5);
-        showResultUI(function.checkLegal(), textView6);
-        showResultUI(function.checkVerifyApps(this), textView7);
+
+
+        showResultUI(function.checkWifiAlwaysScanAvailable(this), textView1, 1);
+        showResultUI(function.checkAutoSync(),textView2,2);
+        showResultUI(function.checkUnknownSource(this),textView3,3);
+        showResultUI(function.checkDevelopmentOption(this),textView4,4);
+        showResultUI(function.checkUSBDebugging(this), textView5,5);
+        showResultUI(function.checkLegal(), textView6, 6);
+        showResultUI(function.checkVerifyApps(this), textView7, 7);
+
 
 
 
@@ -158,7 +251,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.Save_log) {
+            function.writeLog(log);
             return true;
         }
 
