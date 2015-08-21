@@ -2,6 +2,7 @@ package com.example.pega.default_setting_sample;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,10 +11,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.os.Build;
 
 public class MainActivity extends AppCompatActivity {
 
     String log="";
+    String fingerprint = " Fingerprint: " +Build.FINGERPRINT;
+    String device = " Device: " +Build.DEVICE;
+    String device_name = Build.DEVICE;
+    String product = " Product: " +Build.PRODUCT;
+    String brand = " Brand: " +Build.BRAND;
+    String brand_name =Build.BRAND;
 
 
     public void showResultUI(boolean result, TextView mTextView, int number)
@@ -73,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else if(result == false) {
+
             mTextView.setBackgroundColor(getResources().getColor(R.color.red));
             mTextView.setTextSize(20);
 
@@ -127,6 +136,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        if (!Build.DEVICE.contains("KB-1501"))
+        {
+            Intent intent= new Intent(MainActivity.this, DeviceNotAllowed.class);
+            startActivity(intent);
+
+        }
+
+        log = log + fingerprint + "\n";
+        log = log + device + "\n";
+        log = log + product + "\n";
+        log = log + brand + "\n";
+        log = log + "-----------------------------------------\n";
+
 
         TextView textView1 = (TextView) findViewById(R.id.Wifi_scan_always_text1);
         TextView textView2 = (TextView) findViewById(R.id.auto_Sync);
@@ -226,8 +251,8 @@ public class MainActivity extends AppCompatActivity {
         showResultUI(function.checkUnknownSource(this),textView3,3);
         showResultUI(function.checkDevelopmentOption(this),textView4,4);
         showResultUI(function.checkUSBDebugging(this), textView5,5);
-        showResultUI(function.checkLegal(), textView6, 6);
-        showResultUI(function.checkVerifyApps(this), textView7, 7);
+        showResultUI(function.checkLegal(), textView6,6);
+        showResultUI(function.checkVerifyApps(this), textView7,7);
 
 
 
@@ -253,6 +278,14 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.Save_log) {
             function.writeLog(log);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/html");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"wayne2_hsu@pegatroncorp.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "[" + brand_name+" "+ device_name + "]" + "default setting result");
+            intent.putExtra(Intent.EXTRA_TEXT, log);
+            intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///mnt/sdcard/output.txt"));
+
+            startActivity(Intent.createChooser(intent, "Send Email"));
             return true;
         }
 
