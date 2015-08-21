@@ -246,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         showResultUI(function.checkWifiAlwaysScanAvailable(this), textView1, 1);
         showResultUI(function.checkAutoSync(),textView2,2);
         showResultUI(function.checkUnknownSource(this),textView3,3);
