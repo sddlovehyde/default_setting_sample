@@ -10,16 +10,15 @@
     <TextView android:text="@string/Scan_Always_Avaliable"
         android:id="@+id/Wifi_scan_always_text1"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/text_view_border"/>
+        android:layout_alignParentStart="true" />
 
     <TextView android:text="@string/Auto_Sync"
         android:id="@+id/auto_Sync"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/Wifi_scan_always_text1"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
@@ -27,7 +26,7 @@
     <TextView android:text="@string/unknown_source"
         android:id="@+id/unknown_source"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/auto_Sync"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -35,7 +34,7 @@
     <TextView android:text="@string/development_option"
         android:id="@+id/development_option"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/unknown_source"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/unknown_source" />
@@ -43,7 +42,7 @@
     <TextView android:text="@string/USB_debugging"
         android:id="@+id/USB_debugging"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/development_option"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/development_option" />
@@ -51,7 +50,7 @@
     <TextView android:text="@string/Legal"
         android:id="@+id/Legal"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/USB_debugging"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/USB_debugging" />
@@ -59,7 +58,7 @@
     <TextView android:text="@string/verify_app"
         android:id="@+id/verify_app"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/Legal"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/Legal" />
@@ -67,19 +66,19 @@
     <TextView android:text="@string/backup"
         android:id="@+id/backup"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/verify_app"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/verify_app"
-        android:background="@drawable/text_view_border"/>
+        android:layout_alignEnd="@+id/verify_app"/>
 
     <Button
         android:layout_width="60dp"
         android:layout_height="40dp"
         android:text="Go"
         android:id="@+id/button_setting_backup"
-        android:layout_alignTop="@+id/button_backup_pass"
-        android:layout_toStartOf="@+id/button_backup_pass" />
+        android:layout_gravity="right"
+        android:layout_alignBottom="@+id/backup"
+        android:layout_alignStart="@+id/button_setting_location" />
 
     <Button
         android:layout_width="60dp"
@@ -94,25 +93,30 @@
         android:layout_height="40dp"
         android:text="fail"
         android:id="@+id/button_backup_fail"
+        android:layout_gravity="left"
         android:layout_alignBottom="@+id/backup"
-        android:layout_alignEnd="@+id/backup" />
+        android:layout_alignParentEnd="true" />
+
+
+
+
 
     <TextView android:text="@string/Location"
         android:id="@+id/Location"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/backup"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/backup"
-        android:background="@drawable/text_view_border"/>
+        android:layout_alignEnd="@+id/backup"/>
 
     <Button
         android:layout_width="60dp"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
         android:text="Go"
         android:id="@+id/button_setting_location"
         android:layout_alignTop="@+id/button_location_pass"
-        android:layout_toStartOf="@+id/button_location_pass" />
+        android:layout_toStartOf="@+id/button_location_pass"
+        android:layout_alignBottom="@+id/Location" />
 
     <Button
         android:layout_width="60dp"
@@ -128,9 +132,7 @@
         android:text="fail"
         android:id="@+id/button_location_fail"
         android:layout_alignBottom="@+id/Location"
-        android:layout_alignEnd="@+id/Location" />
-
-
+        android:layout_alignStart="@+id/button_backup_fail" />
 
 
 

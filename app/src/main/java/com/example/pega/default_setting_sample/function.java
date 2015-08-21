@@ -2,7 +2,6 @@ package com.example.pega.default_setting_sample;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.provider.Settings;
 import java.io.BufferedReader;
@@ -116,22 +115,6 @@ public class function {
 
 
     }
-
-    public  static void moveToBackup(Context context)
-    {
-
-        context.startActivity(new Intent(Settings.ACTION_PRIVACY_SETTINGS));
-
-    }
-
-
-    public  static void moveToLcation(Context context)
-    {
-
-        context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-
-    }
-
 
 
 

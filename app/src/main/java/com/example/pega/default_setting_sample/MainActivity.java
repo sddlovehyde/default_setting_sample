@@ -2,7 +2,6 @@ package com.example.pega.default_setting_sample;
 
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         if( result == true)
         {
             mTextView.setBackgroundColor(getResources().getColor(R.color.green));
-            mTextView.setTextSize(25);
+            mTextView.setTextSize(20);
 
         }
         else
             mTextView.setBackgroundColor(getResources().getColor(R.color.red));
-            mTextView.setTextSize(25);
+            mTextView.setTextSize(20);
 
 
     }
@@ -46,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textView6 = (TextView) findViewById(R.id.Legal);
         TextView textView7 = (TextView) findViewById(R.id.verify_app);
         final TextView textView8 = (TextView) findViewById(R.id.backup);
-        textView8.setTextSize(25);
+        textView8.setTextSize(20);
         textView8.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
         final TextView textView9 = (TextView) findViewById(R.id.Location);
-        textView9.setTextSize(25);
+        textView9.setTextSize(20);
         textView9.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
 
         Button button_setting_backup = (Button) findViewById(R.id.button_setting_backup);
@@ -127,9 +126,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-
-
 
 
 
